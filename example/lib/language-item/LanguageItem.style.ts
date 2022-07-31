@@ -1,4 +1,4 @@
-import {StyleSheet, Dimensions, ViewStyle} from 'react-native';
+import {StyleSheet, Dimensions, ViewStyle, TextStyle} from 'react-native';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
@@ -9,15 +9,24 @@ export const _itemContainer = (
 ): ViewStyle => ({
   backgroundColor: backgroundColor,
   borderRadius: 20,
-  justifyContent: 'center',
   height: height,
   width: width,
   marginBottom: 12,
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingLeft: 24,
+});
+
+export const _titleStyle = (color: string): TextStyle => ({
+  fontWeight: '600',
+  color: color,
+  fontSize: 16,
 });
 
 export default StyleSheet.create({
   imageStyle: {
-    width: 100,
-    height: 100,
+    width: 40,
+    height: 40,
+    marginRight: 18,
   },
 });
