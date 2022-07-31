@@ -4,10 +4,13 @@ const windowHeight = Dimensions.get('window').height;
 
 export const _itemContainer = (
   backgroundColor: string,
+  borderColor: string,
   width: number,
   height: number,
 ): ViewStyle => ({
+  borderColor: borderColor,
   backgroundColor: backgroundColor,
+  borderWidth: 2,
   borderRadius: 20,
   height: height,
   width: width,

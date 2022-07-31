@@ -36,8 +36,21 @@ const LanguagePicker: React.FC<ILanguagePickerProps> = ({
   containerHeight = windowHeight * 0.7,
   onSelect,
 }) => {
+  const [selectedItem, setSelectedItem] = useState<
+    ILanguagePicker | undefined
+  >();
+
+  const handleOnSelectItem = (item: ILanguagePicker) => {
+    setSelectedItem(item);
+    onSelect && onSelect(item);
+  };
+
   const renderItem = (item: ILanguagePicker) => (
-    <LanguageItem handleOnSelectItem={onSelect} item={item} />
+    <LanguageItem
+      onSelect={handleOnSelectItem}
+      isActive={selectedItem === item}
+      item={item}
+    />
   );
 
   return (
