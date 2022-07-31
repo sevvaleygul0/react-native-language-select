@@ -111,7 +111,7 @@ Change log will be here !
 
 ## Author
 
-FreakyCoder, kurayogun@gmail.com
+Sevval Eygul, sevvalleygull@gmail.com
 
 ## License
 
