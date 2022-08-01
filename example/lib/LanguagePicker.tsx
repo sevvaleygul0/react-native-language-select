@@ -19,6 +19,7 @@ const windowHeight = Dimensions.get('window').height;
 export interface ILanguagePicker {
   title: string;
   imageSource: any;
+  initialIndex?: number;
 }
 
 interface ILanguagePickerProps {
@@ -26,19 +27,21 @@ interface ILanguagePickerProps {
   container?: ViewStyle;
   containerWidth?: number;
   containerHeight?: number;
+  initialIndex?: number;
   onSelect: (selectedItem: ILanguagePicker) => void;
 }
 
 const LanguagePicker: React.FC<ILanguagePickerProps> = ({
   data,
   container,
+  initialIndex = -1,
   containerWidth = windowWidth * 0.9,
   containerHeight = windowHeight * 0.7,
   onSelect,
 }) => {
-  const [selectedItem, setSelectedItem] = useState<
-    ILanguagePicker | undefined
-  >();
+  const [selectedItem, setSelectedItem] = useState<ILanguagePicker | undefined>(
+    data[initialIndex],
+  );
 
   const handleOnSelectItem = (item: ILanguagePicker) => {
     setSelectedItem(item);

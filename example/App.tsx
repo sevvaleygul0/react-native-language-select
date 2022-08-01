@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import LanguageItem from './lib/language-item/LanguageItem';
-import LanguagePicker from './lib/LanguagePicker';
+import LanguagePicker, {ILanguagePicker} from './lib/LanguagePicker';
 
 const data = [
   {
@@ -40,7 +40,12 @@ const App = () => {
         paddingTop: 200,
         backgroundColor: '#F3F3F3',
       }}>
-      <LanguagePicker data={data} />
+      <LanguagePicker
+        data={data}
+        onSelect={(selectedItem: ILanguagePicker) => {
+          console.log(selectedItem);
+        }}
+      />
     </View>
   );
 };

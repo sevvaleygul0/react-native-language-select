@@ -32,4 +32,10 @@ export default StyleSheet.create({
     height: 40,
     marginRight: 18,
   },
+  checkImageStyle: {
+    position: 'absolute',
+    right: 24,
+    width: 20,
+    height: 20,
+  },
 });
