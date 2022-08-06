@@ -1,6 +1,8 @@
 import React from 'react';
-import {View} from 'react-native';
+import {Dimensions, Text, View} from 'react-native';
 import LanguagePicker, {ILanguagePicker} from './lib/LanguagePicker';
+
+const windowWidth = Dimensions.get('window').width;
 
 const data: ILanguagePicker[] = [
   {
@@ -38,10 +40,32 @@ const App = () => {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        paddingTop: 200,
-        backgroundColor: '#F3F3F3',
-      }}
-    >
+        paddingTop: 50,
+        backgroundColor: '#EFEFEF',
+      }}>
+      <Text
+        style={{
+          textAlign: 'center',
+          fontWeight: '600',
+          fontSize: 26,
+          color: '#454A62',
+          marginTop: 32,
+          marginBottom: 30,
+        }}>
+        Language
+      </Text>
+      <Text
+        style={{
+          width: windowWidth * 0.7,
+          textAlign: 'center',
+          fontWeight: '500',
+          fontSize: 13,
+          color: '#2F3452',
+          marginBottom: 40,
+        }}>
+        You can choose the language and costumise your application in the
+        language you want
+      </Text>
       <LanguagePicker
         initialIndex={1}
         data={data}
