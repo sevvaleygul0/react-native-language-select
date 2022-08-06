@@ -1,8 +1,8 @@
 {
-  "name": "react-native-language-picker",
-  "version": "0.0.1",
+  "name": "react-native-language-select",
+  "version": "0.0.7",
   "description": "Useful and customizable language picker",
-  "main": "./build/dist/index.js",
+  "main": "./build/dist/LanguagePicker.js",
   "repository": "git@github.com:sevvaleygul0/react-native-language-picker.git",
   "author": "Sevval Eygul <sevvalleygull@gmail.com>",
   "license": "MIT",
@@ -19,6 +19,8 @@
     "rn",
     "language",
     "picker",
+    "language-select",
+    "select",
     "language-picker"
   ],
   "peerDependencies": {

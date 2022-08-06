@@ -1,17 +1,10 @@
-import RNBounceable from '@freakycoder/react-native-bounceable';
 import React, {useState} from 'react';
-import {
-  Dimensions,
-  FlatList,
-  SafeAreaView,
-  View,
-  ViewStyle,
-} from 'react-native';
-import LanguageItem from './language-item/LanguageItem';
+import {Dimensions, FlatList, ViewStyle} from 'react-native';
 /**
  * ? Local Imports
  */
-import styles, {_container} from './LanguagePicker.style';
+import {_container} from './LanguagePicker.style';
+import LanguageItem from './language-item/LanguageItem';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -19,25 +12,26 @@ const windowHeight = Dimensions.get('window').height;
 export interface ILanguagePicker {
   title: string;
   imageSource: any;
-  initialIndex?: number;
+  language?: string;
 }
 
 interface ILanguagePickerProps {
   data: ILanguagePicker[];
-  container?: ViewStyle;
+  flatListStyle?: ViewStyle;
   containerWidth?: number;
   containerHeight?: number;
   initialIndex?: number;
-  onSelect: (selectedItem: ILanguagePicker) => void;
+  onSelect?: (selectedItem: ILanguagePicker) => void;
 }
 
 const LanguagePicker: React.FC<ILanguagePickerProps> = ({
   data,
-  container,
+  flatListStyle,
   initialIndex = -1,
   containerWidth = windowWidth * 0.9,
   containerHeight = windowHeight * 0.7,
   onSelect,
+  ...rest
 }) => {
   const [selectedItem, setSelectedItem] = useState<ILanguagePicker | undefined>(
     data[initialIndex],
@@ -53,13 +47,14 @@ const LanguagePicker: React.FC<ILanguagePickerProps> = ({
       onSelect={handleOnSelectItem}
       isActive={selectedItem === item}
       item={item}
+      {...rest}
     />
   );
 
   return (
     <FlatList
       data={data}
-      style={[_container(containerWidth, containerHeight), container]}
+      style={[_container(containerWidth, containerHeight), flatListStyle]}
       renderItem={({item}) => renderItem(item)}
       keyExtractor={item => item.title}
     />

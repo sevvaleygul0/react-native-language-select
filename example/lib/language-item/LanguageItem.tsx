@@ -1,13 +1,6 @@
 import RNBounceable from '@freakycoder/react-native-bounceable';
-import React, {useState} from 'react';
-import {
-  Dimensions,
-  Image,
-  StyleProp,
-  Text,
-  View,
-  ViewStyle,
-} from 'react-native';
+import React from 'react';
+import {Dimensions, Image, Text, ViewStyle} from 'react-native';
 import {ILanguagePicker} from '../LanguagePicker';
 /**
  * ? Local Imports
@@ -15,16 +8,13 @@ import {ILanguagePicker} from '../LanguagePicker';
 import styles, {_itemContainer, _titleStyle} from './LanguageItem.style';
 
 const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
-type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
-
 interface ILanguageItem {
   item: ILanguagePicker;
   width?: number;
   height?: number;
   isActive: boolean;
   backgroundColor?: string;
+  activeBorderColor?: string;
   textColor?: string;
   itemContainer?: ViewStyle;
   imageComponent?: React.ReactNode | React.ReactNode[];
@@ -42,25 +32,31 @@ const LanguageItem: React.FC<ILanguageItem> = ({
   textColor = '#2F3452',
   imageComponent,
   checkComponent,
+  activeBorderColor = '#504ED9',
   onSelect,
+  ...rest
 }) => {
-  const borderColor = isActive ? '#504ED9' : '#FFFFFF';
-
+  const borderColor = isActive ? activeBorderColor : backgroundColor;
   return (
     <RNBounceable
+      {...rest}
       style={[
         _itemContainer(backgroundColor, borderColor, width, height),
         itemContainer,
       ]}
-      onPress={() => onSelect && onSelect(item)}>
+      onPress={() => onSelect && onSelect(item)}
+    >
       {imageComponent || (
-        <Image source={item.imageSource} style={styles.imageStyle} />
+        <Image {...rest} source={item.imageSource} style={styles.imageStyle} />
       )}
-      <Text style={_titleStyle(textColor)}>{item.title}</Text>
+      <Text {...rest} style={_titleStyle(textColor)}>
+        {item.title}
+      </Text>
       {isActive &&
         (checkComponent || (
           <Image
-            source={require('../assets/check.png')}
+            {...rest}
+            source={require('../local-assets/check.png')}
             style={styles.checkImageStyle}
           />
         ))}

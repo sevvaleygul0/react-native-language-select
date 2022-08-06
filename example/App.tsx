@@ -1,32 +1,33 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-import LanguageItem from './lib/language-item/LanguageItem';
+import {View} from 'react-native';
 import LanguagePicker, {ILanguagePicker} from './lib/LanguagePicker';
 
-const data = [
+const data: ILanguagePicker[] = [
   {
     title: 'English',
-    imageSource: require('./lib/assets/america.png'),
-  },
-  {
-    title: 'Turkish',
-    imageSource: require('./lib/assets/turkey.png'),
+    imageSource: require('./lib/local-assets/america.png'),
+    language: 'en',
   },
   {
     title: 'Italian',
-    imageSource: require('./lib/assets/italy.png'),
+    imageSource: require('./lib/local-assets/italy.png'),
   },
   {
     title: 'German',
-    imageSource: require('./lib/assets/germany.png'),
+    imageSource: require('./lib/local-assets/germany.png'),
+  },
+  {
+    title: 'Turkish',
+    imageSource: require('./lib/local-assets/turkey.png'),
+    language: 'tr',
   },
   {
     title: 'Swedish',
-    imageSource: require('./lib/assets/sweden.png'),
+    imageSource: require('./lib/local-assets/sweden.png'),
   },
   {
     title: 'Japanese',
-    imageSource: require('./lib/assets/japan.png'),
+    imageSource: require('./lib/local-assets/japan.png'),
   },
 ];
 
@@ -39,8 +40,10 @@ const App = () => {
         alignItems: 'center',
         paddingTop: 200,
         backgroundColor: '#F3F3F3',
-      }}>
+      }}
+    >
       <LanguagePicker
+        initialIndex={1}
         data={data}
         onSelect={(selectedItem: ILanguagePicker) => {
           console.log(selectedItem);
