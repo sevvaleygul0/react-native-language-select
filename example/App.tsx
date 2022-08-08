@@ -68,6 +68,7 @@ const App = () => {
       </Text>
       <LanguagePicker
         initialIndex={1}
+        activeBorderColor="red"
         data={data}
         onSelect={(selectedItem: ILanguagePicker) => {
           console.log(selectedItem);

@@ -1,6 +1,6 @@
-import {StyleSheet, Dimensions, ViewStyle, TextStyle} from 'react-native';
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+import { StyleSheet, Dimensions, ViewStyle, TextStyle } from "react-native";
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 export const _itemContainer = (
   backgroundColor: string,
@@ -15,13 +15,13 @@ export const _itemContainer = (
   height: height,
   width: width,
   marginBottom: 12,
-  flexDirection: 'row',
-  alignItems: 'center',
+  flexDirection: "row",
+  alignItems: "center",
   paddingLeft: 24,
 });
 
 export const _titleStyle = (color: string): TextStyle => ({
-  fontWeight: '600',
+  fontWeight: "600",
   color: color,
   fontSize: 16,
 });
@@ -33,7 +33,7 @@ export default StyleSheet.create({
     marginRight: 18,
   },
   checkImageStyle: {
-    position: 'absolute',
+    position: "absolute",
     right: 24,
     width: 20,
     height: 20,
