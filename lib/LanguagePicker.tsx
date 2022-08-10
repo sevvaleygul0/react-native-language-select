@@ -47,12 +47,12 @@ const LanguagePicker: React.FC<ILanguagePickerProps> = ({
       onSelect={handleOnSelectItem}
       isActive={selectedItem === item}
       item={item}
-      {...rest}
     />
   );
 
   return (
     <FlatList
+      {...rest}
       data={data}
       style={[_container(containerWidth, containerHeight), flatListStyle]}
       renderItem={({ item }) => renderItem(item)}

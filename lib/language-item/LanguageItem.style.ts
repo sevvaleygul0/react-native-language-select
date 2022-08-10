@@ -37,5 +37,6 @@ export default StyleSheet.create({
     right: 24,
     width: 20,
     height: 20,
+    color: "red",
   },
 });

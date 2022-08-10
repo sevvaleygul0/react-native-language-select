@@ -1,10 +1,16 @@
-import RNBounceable from "@freakycoder/react-native-bounceable";
 import React from "react";
-import { Dimensions, Image, Text, ViewStyle } from "react-native";
-import { ILanguagePicker } from "../LanguagePicker";
+import {
+  Dimensions,
+  Image,
+  ImageSourcePropType,
+  Text,
+  ViewStyle,
+} from "react-native";
+import RNBounceable from "@freakycoder/react-native-bounceable";
 /**
  * ? Local Imports
  */
+import { ILanguagePicker } from "../LanguagePicker";
 import styles, { _itemContainer, _titleStyle } from "./LanguageItem.style";
 
 const windowWidth = Dimensions.get("window").width;
@@ -19,6 +25,7 @@ interface ILanguageItem {
   itemContainer?: ViewStyle;
   imageComponent?: React.ReactNode | React.ReactNode[];
   checkComponent?: React.ReactNode | React.ReactNode[];
+  rightImageSource?: ImageSourcePropType;
   onSelect?: (selectedItem: ILanguagePicker) => void;
 }
 
@@ -33,13 +40,12 @@ const LanguageItem: React.FC<ILanguageItem> = ({
   imageComponent,
   checkComponent,
   activeBorderColor = "#504ED9",
+  rightImageSource,
   onSelect,
-  ...rest
 }) => {
   const borderColor = isActive ? activeBorderColor : backgroundColor;
   return (
     <RNBounceable
-      {...rest}
       style={[
         _itemContainer(backgroundColor, borderColor, width, height),
         itemContainer,
@@ -47,16 +53,13 @@ const LanguageItem: React.FC<ILanguageItem> = ({
       onPress={() => onSelect && onSelect(item)}
     >
       {imageComponent || (
-        <Image {...rest} source={item.imageSource} style={styles.imageStyle} />
+        <Image source={item.imageSource} style={styles.imageStyle} />
       )}
-      <Text {...rest} style={_titleStyle(textColor)}>
-        {item.title}
-      </Text>
+      <Text style={_titleStyle(textColor)}>{item.title}</Text>
       {isActive &&
         (checkComponent || (
           <Image
-            {...rest}
-            source={require("../local-assets/check.png")}
+            source={rightImageSource || require("../local-assets/check.png")}
             style={styles.checkImageStyle}
           />
         ))}

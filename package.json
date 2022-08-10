@@ -1,6 +1,6 @@
 {
   "name": "react-native-language-select",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Useful and customizable language picker",
   "main": "./build/dist/LanguagePicker.js",
   "repository": "git@github.com:sevvaleygul0/react-native-language-picker.git",
