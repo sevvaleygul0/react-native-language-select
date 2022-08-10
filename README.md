@@ -2,7 +2,7 @@
 
 <p align="center">
   <img alt="React Native Typescript Library Starter"
-        src="assets/react-native-language-select.gif" />
+        src="assets/react-native-language-select.gif" height="1050" width="600"/>
 </p>
 
 # Installation
@@ -39,7 +39,7 @@ const data: ILanguagePicker[] = [
   {
     title: "Turkish",
     imageSource: require("./lib/local-assets/turkey.png"),
-    language: "tr",
+    language: "tr-TR",
   },
   {
     title: "Swedish",
@@ -93,6 +93,10 @@ const data: ILanguagePicker[] = [
 ## Future Plans
 
 - [x] ~~LICENSE~~
+
+## Inspiration
+
+Thank you [Oww Studio ](https://dribbble.com/shots/15254633-Translator-Mobile-App-Exploration?utm_source=Clipboard_Shot&utm_campaign=milliarta&utm_content=Translator%20Mobile%20App%20Exploration%20%F0%9F%87%AC%F0%9F%87%A7&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=milliarta&utm_content=Translator%20Mobile%20App%20Exploration%20%F0%9F%87%AC%F0%9F%87%A7&utm_medium=Social_Share))
 
 ## Author
 
