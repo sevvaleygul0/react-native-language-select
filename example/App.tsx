@@ -42,7 +42,8 @@ const App = () => {
         alignItems: 'center',
         paddingTop: 50,
         backgroundColor: '#EFEFEF',
-      }}>
+      }}
+    >
       <Text
         style={{
           textAlign: 'center',
@@ -51,7 +52,8 @@ const App = () => {
           color: '#454A62',
           marginTop: 32,
           marginBottom: 30,
-        }}>
+        }}
+      >
         Language
       </Text>
       <Text
@@ -62,13 +64,16 @@ const App = () => {
           fontSize: 13,
           color: '#2F3452',
           marginBottom: 40,
-        }}>
+        }}
+      >
         You can choose the language and costumise your application in the
         language you want
       </Text>
       <LanguagePicker
         initialIndex={1}
-        activeBorderColor="red"
+        languageItemProps={{
+          activeBorderColor: 'red',
+        }}
         data={data}
         onSelect={(selectedItem: ILanguagePicker) => {
           console.log(selectedItem);
