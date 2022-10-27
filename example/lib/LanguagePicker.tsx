@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { Dimensions, FlatList, ViewStyle } from "react-native";
+import React, {useState} from 'react';
+import {Dimensions, FlatList, ViewStyle} from 'react-native';
 /**
  * ? Local Imports
  */
-import { _container } from "./LanguagePicker.style";
-import LanguageItem, { ILanguageItemProps } from "./language-item/LanguageItem";
+import {_container} from './LanguagePicker.style';
+import LanguageItem, {ILanguageItemProps} from './language-item/LanguageItem';
 
-const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 export interface ILanguagePicker {
   title: string;
@@ -58,8 +58,8 @@ const LanguagePicker: React.FC<ILanguagePickerProps> = ({
       {...rest}
       data={data}
       style={[_container(containerWidth, containerHeight), flatListStyle]}
-      renderItem={({ item }) => renderItem(item)}
-      keyExtractor={(item) => item.title}
+      renderItem={({item}) => renderItem(item)}
+      keyExtractor={item => item.title}
     />
   );
 };

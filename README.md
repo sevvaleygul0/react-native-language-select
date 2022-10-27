@@ -89,6 +89,7 @@ const data: ILanguagePicker[] = [
 | itemContainer     |       default       |               default               | change the language item container style                |
 | imageComponent    |       default       | React.ReactNode / React.ReactNode[] | change the language image component                     |
 | checkComponent    |       default       | React.ReactNode / React.ReactNode[] | change the check component                              |
+| languageItemProps |       default       |         ILanguageItemProps          | change the language item props                          |
 
 ## Future Plans
 

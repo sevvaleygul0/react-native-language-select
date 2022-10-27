@@ -23,10 +23,6 @@
     "select",
     "language-picker"
   ],
-  "peerDependencies": {
-    "react": ">= 16.x.x",
-    "react-native": ">=0.63.x"
-  },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
@@ -55,5 +51,8 @@
     "husky:commitlint": "npx husky add .husky/commit-msg 'npx --no-install commitlint --edit'",
     "husky:prettier": "npx husky set .husky/pre-commit 'npm run prettier'",
     "husky:lint": "npx husky add .husky/pre-commit 'npm run lint'"
+  },
+  "dependencies": {
+    "@freakycoder/react-native-bounceable": ">= ^1.0.3"
   }
 }

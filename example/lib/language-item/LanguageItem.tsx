@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 import {
   Dimensions,
   Image,
   ImageSourcePropType,
   Text,
   ViewStyle,
-} from "react-native";
-import RNBounceable from "@freakycoder/react-native-bounceable";
+} from 'react-native';
+import RNBounceable from '@freakycoder/react-native-bounceable';
 /**
  * ? Local Imports
  */
-import { ILanguagePicker } from "../LanguagePicker";
-import styles, { _itemContainer, _titleStyle } from "./LanguageItem.style";
+import {ILanguagePicker} from '../LanguagePicker';
+import styles, {_itemContainer, _titleStyle} from './LanguageItem.style';
 
-const windowWidth = Dimensions.get("window").width;
+const windowWidth = Dimensions.get('window').width;
 
 interface ILanguageItemRequiredProps extends ILanguageItemProps {
   item: ILanguagePicker;
@@ -39,11 +39,11 @@ const LanguageItem: React.FC<ILanguageItemRequiredProps> = ({
   width = windowWidth * 0.9,
   height = 80,
   isActive,
-  backgroundColor = "#FFFFFF",
-  textColor = "#2F3452",
+  backgroundColor = '#FFFFFF',
+  textColor = '#2F3452',
   imageComponent,
   checkComponent,
-  activeBorderColor = "#504ED9",
+  activeBorderColor = '#504ED9',
   rightImageSource,
   onSelect,
 }) => {
@@ -63,7 +63,7 @@ const LanguageItem: React.FC<ILanguageItemRequiredProps> = ({
       {isActive &&
         (checkComponent || (
           <Image
-            source={rightImageSource || require("../local-assets/check.png")}
+            source={rightImageSource || require('../local-assets/check.png')}
             style={styles.checkImageStyle}
           />
         ))}
