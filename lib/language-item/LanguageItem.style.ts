@@ -1,6 +1,4 @@
-import { StyleSheet, Dimensions, ViewStyle, TextStyle } from "react-native";
-const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
+import { StyleSheet, ViewStyle, TextStyle } from "react-native";
 
 export const _itemContainer = (
   backgroundColor: string,
@@ -37,6 +35,5 @@ export default StyleSheet.create({
     right: 24,
     width: 20,
     height: 20,
-    color: "red",
   },
 });
